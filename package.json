@@ -1,0 +1,14 @@
+{
+    "name": "weather-dash",
+    "version": "1.0.0",
+    "description": "A weather dashboard application",
+    "main": "src/scripts/main.js",
+    "scripts": {
+        "start": "npx http-server src",
+        "build": "echo \"Building project...\"",
+        "test": "echo \"No tests specified yet\" && exit 0"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}
