@@ -219,6 +219,8 @@ function displayWeather(data) {
   UI.weather.details.wind.innerText = `${data.current.wind} km/h`;
   UI.weather.details.pressure.innerText = `${data.current.pressure} hPa`;
   UI.weather.details.visibility.innerText = `${data.current.visibility} km`;
+  UI.weather.details.uvIndex.innerText = data.current.uvIndex || "--";
+  UI.weather.details.aqi.innerText = data.current.aqi || "--";
 
   // Animations
   UI.weather.icon.style.animation = "weatherIconFloat 3s ease-in-out infinite";
