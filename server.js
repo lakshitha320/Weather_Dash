@@ -12,20 +12,31 @@ app.use((req, res, next) => {
     next();
 });
 
-// Serve static files from the current directory
-app.use(express.static(__dirname));
-
 // Import weather routes
 const weatherRoutes = require("./routes/weather");
 app.use("/api/weather", weatherRoutes);
 
+// Handle API 404s - return JSON instead of HTML
+app.use("/api/*", (req, res) => {
+    res.status(404).json({ error: "API Route not found" });
+});
+
+// Serve static files from the current directory
+app.use(express.static(__dirname));
+
+// For all other routes, serve index.html (SPA support)
+app.get("*", (req, res) => {
+    res.sendFile(require('path').join(__dirname, 'index.html'));
+});
+
 // Start server
 const PORT = process.env.PORT || 5000;
 
-// Export for Vercel
+// Export for Vercel/Hosting
 if (require.main === module) {
     app.listen(PORT, () => {
-        console.log(`Weather App running at http://localhost:${PORT}`);
+        console.log(`Weather App is live!`);
+        console.log(`Local: http://localhost:${PORT}`);
     });
 }
 
