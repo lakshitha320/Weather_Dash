@@ -111,6 +111,12 @@ async function loadWeather(city) {
   try {
     // 1. Search City via Backend
     const geoRes = await fetch(`${CONFIG.API_BASE}/search?city=${encodeURIComponent(city)}`);
+
+    if (!geoRes.ok) {
+      const errorData = await geoRes.json().catch(() => ({}));
+      throw new Error(errorData.error || `Server error: ${geoRes.status}`);
+    }
+
     const geoData = await geoRes.json();
 
     if (!geoData.results?.length) throw new Error('City not found');
@@ -119,14 +125,20 @@ async function loadWeather(city) {
 
     // 2. Weather & AQI Data via Backend
     const dataRes = await fetch(`${CONFIG.API_BASE}/forecast?lat=${latitude}&lon=${longitude}`);
+
+    if (!dataRes.ok) {
+      const errorData = await dataRes.json().catch(() => ({}));
+      throw new Error(errorData.error || `Failed to fetch weather data`);
+    }
+
     const { weather, air_quality } = await dataRes.json();
 
     const processedData = processWeatherData(weather, air_quality, name, country, admin1);
     displayWeather(processedData);
 
   } catch (error) {
-    console.error(error);
-    showError(error.message || 'Failed to fetch weather data.');
+    console.error("Weather App Error:", error);
+    showError(error.message || 'Something went wrong.');
   } finally {
     setLoadingState(false);
   }
