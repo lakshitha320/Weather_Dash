@@ -109,21 +109,19 @@ async function loadWeather(city) {
   setLoadingState(true);
 
   try {
-    // 1. Geocoding
-    const geoRes = await fetch(`${CONFIG.GEO_URL}?name=${encodeURIComponent(city)}&count=1&language=en&format=json`);
+    // 1. Search City via Backend
+    const geoRes = await fetch(`${CONFIG.API_BASE}/search?city=${encodeURIComponent(city)}`);
     const geoData = await geoRes.json();
 
     if (!geoData.results?.length) throw new Error('City not found');
 
     const { latitude, longitude, name, country, admin1 } = geoData.results[0];
 
-    // 2. Weather Data
-    const weatherRes = await fetch(
-      `${CONFIG.WEATHER_URL}?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,weather_code,cloud_cover,pressure_msl,surface_pressure,wind_speed_10m&hourly=temperature_2m,weather_code,visibility&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=auto`
-    );
-    const weatherData = await weatherRes.json();
+    // 2. Weather & AQI Data via Backend
+    const dataRes = await fetch(`${CONFIG.API_BASE}/forecast?lat=${latitude}&lon=${longitude}`);
+    const { weather, air_quality } = await dataRes.json();
 
-    const processedData = processWeatherData(weatherData, name, country, admin1);
+    const processedData = processWeatherData(weather, air_quality, name, country, admin1);
     displayWeather(processedData);
 
   } catch (error) {
@@ -135,8 +133,8 @@ async function loadWeather(city) {
 }
 
 // ===== Data Processing =====
-function processWeatherData(data, cityName, country, state) {
-  const current = data.current;
+function processWeatherData(weatherData, aqiData, cityName, country, state) {
+  const current = weatherData.current;
   const currentInfo = getWeatherFromCode(current.weather_code);
 
   // Hourly (Next 8 hours)
@@ -144,9 +142,8 @@ function processWeatherData(data, cityName, country, state) {
   const now = new Date();
   let startIndex = 0;
 
-  // Find start index based on current time
-  for (let i = 0; i < data.hourly.time.length; i++) {
-    if (new Date(data.hourly.time[i]) >= now) {
+  for (let i = 0; i < weatherData.hourly.time.length; i++) {
+    if (new Date(weatherData.hourly.time[i]) >= now) {
       startIndex = i;
       break;
     }
@@ -154,12 +151,12 @@ function processWeatherData(data, cityName, country, state) {
 
   for (let i = 0; i < 8; i++) {
     const idx = startIndex + i;
-    if (idx >= data.hourly.time.length) break;
+    if (idx >= weatherData.hourly.time.length) break;
 
-    const info = getWeatherFromCode(data.hourly.weather_code[idx]);
+    const info = getWeatherFromCode(weatherData.hourly.weather_code[idx]);
     hourly.push({
-      time: new Date(data.hourly.time[idx]).getHours() + ':00',
-      temp: Math.round(data.hourly.temperature_2m[idx]),
+      time: new Date(weatherData.hourly.time[idx]).getHours() + ':00',
+      temp: Math.round(weatherData.hourly.temperature_2m[idx]),
       icon: info.icon,
       condition: info.condition
     });
@@ -168,12 +165,12 @@ function processWeatherData(data, cityName, country, state) {
   // Daily (Next 5 days)
   const daily = [];
   for (let i = 0; i < 5; i++) {
-    if (!data.daily.time[i]) break;
-    const info = getWeatherFromCode(data.daily.weather_code[i]);
+    if (!weatherData.daily.time[i]) break;
+    const info = getWeatherFromCode(weatherData.daily.weather_code[i]);
     daily.push({
-      day: new Date(data.daily.time[i]).toLocaleDateString('en-US', { weekday: 'short' }),
-      maxTemp: Math.round(data.daily.temperature_2m_max[i]),
-      minTemp: Math.round(data.daily.temperature_2m_min[i]),
+      day: new Date(weatherData.daily.time[i]).toLocaleDateString('en-US', { weekday: 'short' }),
+      maxTemp: Math.round(weatherData.daily.temperature_2m_max[i]),
+      minTemp: Math.round(weatherData.daily.temperature_2m_min[i]),
       icon: info.icon,
       condition: info.condition
     });
@@ -188,8 +185,10 @@ function processWeatherData(data, cityName, country, state) {
       icon: currentInfo.icon,
       humidity: current.relative_humidity_2m,
       wind: Math.round(current.wind_speed_10m),
-      visibility: "N/A", // API specific handling omitted for brevity
-      pressure: Math.round(current.surface_pressure)
+      visibility: (weatherData.hourly.visibility[startIndex] / 1000).toFixed(1),
+      pressure: Math.round(current.surface_pressure),
+      uvIndex: weatherData.daily.uv_index_max[0],
+      aqi: aqiData.current.us_aqi
     },
     hourly,
     daily
