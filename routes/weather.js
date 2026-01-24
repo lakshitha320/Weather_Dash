@@ -5,10 +5,12 @@ const router = express.Router();
 // 1. Search City (Geocoding)
 router.get("/search", async (req, res) => {
     const city = req.query.city;
+    console.log(`Searching for city: ${city}`);
     if (!city) return res.status(400).json({ error: "City name is required" });
 
     try {
         const response = await axios.get(`https://geocoding-api.open-meteo.com/v1/search?name=${city}&count=5&language=en&format=json`);
+        console.log(`Open-Meteo Response for ${city}:`, JSON.stringify(response.data).substring(0, 100));
         res.json(response.data);
     } catch (error) {
         console.error("Geocoding Error:", error.message);
