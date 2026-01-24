@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <!-- Background -->
+        <div class="background-container">
+            <video id="background-video" autoplay muted loop></video>
+            <div class="background-overlay"></div>
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="main-content">
+
+            <!-- Header -->
+            <header class="header">
+                <div class="logo">
+                    <span class="logo-icon">☀️☁️</span>
+                    <span class="logo-text">Weather Dashboard</span>
+                </div>
+
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Enter city name">
+                    <button id="search-btn" class="search-button">Search</button>
+                    <button id="unit-toggle" class="unit-toggle" title="Toggle °C/°F">°C</button>
+                </div>
+            </header>
+
+            <!-- Main -->
+            <main class="main-area">
+
+                <!-- Welcome -->
+                <section id="welcome-state">
+                    <h1>Welcome 🌍</h1>
+                    <p>Search for a city to view current weather and forecast.</p>
+
+                    <div class="quick-cities">
+                        <button class="city-btn city-button" data-city="London">London</button>
+                        <button class="city-btn city-button" data-city="New York">New York</button>
+                        <button class="city-btn city-button" data-city="Tokyo">Tokyo</button>
+                        <button class="city-btn city-button" data-city="Paris">Paris</button>
+                        <button class="city-btn city-button" data-city="Sydney">Sydney</button>
+                        <button class="city-btn city-button" data-city="Mumbai">Mumbai</button>
+                        <button class="city-btn city-button" data-city="Berlin">Berlin</button>
+                    </div>
+                </section>
+
+                <!-- Loading -->
+                <section id="loading-state" class="hidden">
+                    <div class="loading-spinner"></div>
+                    <p>Loading weather data...</p>
+                </section>
+
+                <!-- Weather Content -->
+                <section id="weather-content" class="hidden">
+
+                    <!-- Current Weather -->
+                    <div class="current-weather">
+                        <h2 id="location-name">City Name</h2>
+                        <p id="location-region">Country</p>
+
+                        <div class="temp-box">
+                            <span id="weather-icon">☀️</span>
+                            <span id="temperature">--°C</span>
+                        </div>
+
+                        <p id="condition">Condition</p>
+                        <p id="feels-like">Feels like --°C</p>
+
+                        <div class="details">
+                            <div>💧 Humidity: <span id="humidity">--%</span></div>
+                            <div>💨 Wind: <span id="wind">-- km/h</span></div>
+                            <div>👁 Visibility: <span id="visibility">-- km</span></div>
+                            <div>📊 Pressure: <span id="pressure">-- hPa</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Hourly Forecast -->
+                    <div class="forecast">
+                        <h3>Hourly Forecast</h3>
+                        <div id="hourly-forecast" class="forecast-container">
+                            <!-- JS will insert hourly cards -->
+                        </div>
+                    </div>
+
+                    <!-- Daily Forecast -->
+                    <div class="forecast">
+                        <h3>5-Day Forecast</h3>
+                        <div id="daily-forecast" class="forecast-container">
+                            <!-- JS will insert daily cards -->
+                        </div>
+                    </div>
+
+                </section>
+
+                <!-- Error -->
+                <section id="error-state" class="hidden">
+                    <p>⚠️ Something went wrong. Please try again.</p>
+                    <button id="retry-btn">Retry</button>
+                </section>
+
+            </main>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>Powered by Weather API</p>
+                <div id="demo-indicator" class="demo-indicator" style="display: none;">
+                    <span class="demo-badge">DEMO MODE</span>
+                    <span class="demo-text">Using sample data - Add API key for real weather</span>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
