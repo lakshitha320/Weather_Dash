@@ -88,7 +88,14 @@ Feature enhancements
 
 Assisted with testing and bug fixes
 
+
 Student 3
+
+Application testing
+
+Documentation (README)
+
+Code review and validation
 
 
 📂 Project Structure
@@ -105,9 +112,3 @@ Weather_Dash/
 │       └── deploy.yml
 ├── README.md
 └── package.json
-
-Application testing
-
-Documentation (README)
-
-Code review and validation
