@@ -15,6 +15,12 @@ app.use("/api/weather", weatherRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Weather App running at http://localhost:${PORT}`);
-});
+
+// Export for Vercel
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Weather App running at http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
