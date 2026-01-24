@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dash</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Weather Dash</h1>
+            <div class="search-box">
+                <input type="text" id="city-input" placeholder="Enter city name...">
+                <button id="search-btn">Search</button>
+            </div>
+        </header>
+
+        <main class="dashboard">
+            <!-- Current Weather Section -->
+            <section class="current-weather" id="current-weather">
+                <div class="weather-main">
+                    <h2 id="city-name">--</h2>
+                    <div class="temp-container">
+                        <span id="temperature">--</span>°C
+                    </div>
+                    <p id="weather-desc">--</p>
+                </div>
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <span class="label">Humidity</span>
+                        <span class="value" id="humidity">--%</span>
+                    </div>
+                    <div class="detail-card">
+                        <span class="label">Wind Speed</span>
+                        <span class="value" id="wind-speed">-- m/s</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5-Day Forecast Section -->
+            <section class="forecast-section">
+                <h3>5-Day Forecast</h3>
+                <div class="forecast-grid" id="forecast-grid">
+                    <!-- Forecast items will be injected here by JS -->
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>
