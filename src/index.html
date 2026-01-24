@@ -42,19 +42,17 @@
             </div>
         </div>
 
-        <!-- Content -->
-        <div class="main-content">
+        <!-- Glass Container -->
+        <div class="glass-container">
 
             <!-- Header -->
             <header class="header">
                 <div class="logo">
-                    <span class="logo-icon">☀️☁️</span>
-                    <span class="logo-text">Weather Dashboard</span>
+                    <span class="logo-icon">✨</span>
+                    <span class="logo-text">Weather Wizz</span>
                 </div>
 
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Enter city name">
-                    <button id="search-btn" class="search-button">Search</button>
+                <div class="controls">
                     <button id="unit-toggle" class="unit-toggle" title="Toggle °C/°F">°C</button>
                 </div>
             </header>
@@ -62,65 +60,95 @@
             <!-- Main -->
             <main class="main-area">
 
-                <!-- Welcome -->
+                <!-- Welcome / Search Section -->
                 <section id="welcome-state">
-                    <h1>Welcome 🌍</h1>
-                    <p>Search for a city to view current weather and forecast.</p>
+                    <div class="welcome-box">
+                        <h1>Weather Forecast</h1>
+                        <p>Explore the world's weather with precision.</p>
 
-                    <div class="quick-cities">
-                        <button class="city-btn city-button" data-city="London">London</button>
-                        <button class="city-btn city-button" data-city="New York">New York</button>
-                        <button class="city-btn city-button" data-city="Tokyo">Tokyo</button>
-                        <button class="city-btn city-button" data-city="Paris">Paris</button>
-                        <button class="city-btn city-button" data-city="Sydney">Sydney</button>
-                        <button class="city-btn city-button" data-city="Mumbai">Mumbai</button>
-                        <button class="city-btn city-button" data-city="Berlin">Berlin</button>
+                        <div class="search-wrapper">
+                            <input type="text" id="search-input" placeholder="Search city...">
+                            <button id="search-btn" class="search-button">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="quick-cities">
+                            <button class="city-btn" data-city="Colombo">Colombo</button>
+                            <button class="city-btn" data-city="New York">New York</button>
+                            <button class="city-btn" data-city="London">London</button>
+                            <button class="city-btn" data-city="Tokyo">Tokyo</button>
+                        </div>
                     </div>
                 </section>
 
                 <!-- Loading -->
                 <section id="loading-state" class="hidden">
-                    <div class="loading-spinner"></div>
-                    <p>Loading weather data...</p>
+                    <div class="loader"></div>
+                    <p>Fetching forecast...</p>
                 </section>
 
-                <!-- Weather Content -->
+                <!-- Weather Dashboard -->
                 <section id="weather-content" class="hidden">
 
-                    <!-- Current Weather -->
-                    <div class="current-weather">
-                        <h2 id="location-name">City Name</h2>
-                        <p id="location-region">Country</p>
+                    <div class="dashboard-grid">
+                        <!-- Left Col: Current Weather -->
+                        <div class="weather-card current-card">
+                            <div class="location-badge">
+                                <span id="location-name">City</span>, <span id="location-region">Country</span>
+                            </div>
 
-                        <div class="temp-box">
-                            <span id="weather-icon">☀️</span>
-                            <span id="temperature">--°C</span>
+                            <div class="weather-main">
+                                <span id="weather-icon" class="big-icon">☀️</span>
+                                <div class="temp-group">
+                                    <span id="temperature">25°</span>
+                                    <span id="condition">Clear Sky</span>
+                                </div>
+                            </div>
+
+                            <div class="weather-meta">
+                                <p id="feels-like">Feels 27°</p>
+                                <p id="date-display">Today</p>
+                            </div>
                         </div>
 
-                        <p id="condition">Condition</p>
-                        <p id="feels-like">Feels like --°C</p>
-
-                        <div class="details">
-                            <div>💧 Humidity: <span id="humidity">--%</span></div>
-                            <div>💨 Wind: <span id="wind">-- km/h</span></div>
-                            <div>👁 Visibility: <span id="visibility">-- km</span></div>
-                            <div>📊 Pressure: <span id="pressure">-- hPa</span></div>
+                        <!-- Right Col: Grid of Details -->
+                        <div class="details-grid">
+                            <div class="detail-card">
+                                <span class="detail-label">Humidity</span>
+                                <span id="humidity" class="detail-value">--%</span>
+                            </div>
+                            <div class="detail-card">
+                                <span class="detail-label">Wind</span>
+                                <span id="wind" class="detail-value">-- km/h</span>
+                            </div>
+                            <div class="detail-card">
+                                <span class="detail-label">Visibility</span>
+                                <span id="visibility" class="detail-value">-- km</span>
+                            </div>
+                            <div class="detail-card">
+                                <span class="detail-label">Pressure</span>
+                                <span id="pressure" class="detail-value">-- hPa</span>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Hourly Forecast -->
-                    <div class="forecast">
-                        <h3>Hourly Forecast</h3>
-                        <div id="hourly-forecast" class="forecast-container">
-                            <!-- JS will insert hourly cards -->
+                    <!-- Forecast Section -->
+                    <div class="forecast-section">
+                        <h3>Hourly Updates</h3>
+                        <div id="hourly-forecast" class="forecast-scroller">
+                            <!-- JS will populate -->
                         </div>
                     </div>
 
-                    <!-- Daily Forecast -->
-                    <div class="forecast">
-                        <h3>5-Day Forecast</h3>
-                        <div id="daily-forecast" class="forecast-container">
-                            <!-- JS will insert daily cards -->
+                    <div class="forecast-section">
+                        <h3>5-Day Outlook</h3>
+                        <div id="daily-forecast" class="forecast-scroller">
+                            <!-- JS will populate -->
                         </div>
                     </div>
 
@@ -128,15 +156,17 @@
 
                 <!-- Error -->
                 <section id="error-state" class="hidden">
-                    <p>⚠️ Something went wrong. Please try again.</p>
-                    <button id="retry-btn">Retry</button>
+                    <div class="error-box">
+                        <p>⚠️ Location not found</p>
+                        <button id="retry-btn">Try Again</button>
+                    </div>
                 </section>
 
             </main>
 
             <!-- Footer -->
             <footer class="footer">
-                <p>Powered By Horizon NMC Students</p>
+                <p>Designed by Horizon NMC Students · Powered by LVA@ 2026</p>
             </footer>
 
         </div>
