@@ -1,10 +1,10 @@
-const app = require('./api/index');
+const app = require('../api/index');
 const express = require('express');
 const path = require('path');
 
 const PORT = process.env.PORT || 5000;
 
-// Host static files locally
+// Host static files from the current folder (src)
 app.use(express.static(__dirname));
 
 // Send index.html for all non-API routes
@@ -14,6 +14,10 @@ app.get('*', (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Weather App running at http://localhost:${PORT}`);
-});
+if (require.main === module) {
+    app.listen(PORT, () => {
+        console.log(`Weather App running locally at http://localhost:${PORT}`);
+    });
+}
+
+module.exports = app;
