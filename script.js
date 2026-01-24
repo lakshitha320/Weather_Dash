@@ -44,7 +44,9 @@ const UI = {
       humidity: document.getElementById("humidity"),
       wind: document.getElementById("wind"),
       visibility: document.getElementById("visibility"),
-      pressure: document.getElementById("pressure")
+      pressure: document.getElementById("pressure"),
+      uvIndex: document.getElementById("uv-index"),
+      aqi: document.getElementById("aqi")
     }
   },
   forecast: {
