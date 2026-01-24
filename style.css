@@ -40,15 +40,17 @@
   font-size: 56px;
   font-weight: 800;
   margin-bottom: 16px;
-  background: linear-gradient(to right, #fff, #94a3b8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #ffffff !important;
   letter-spacing: -2px;
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
 }
 
 .welcome-box p {
   color: #cad5e1;
-  /* ... */
+  margin-bottom: 40px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 /* ... */
@@ -68,14 +70,17 @@
   line-height: 0.9;
   background: linear-gradient(to bottom, #fff, #cbd5e1);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   letter-spacing: -3px;
 }
 
 #condition {
   font-size: 24px;
-  color: #94a3b8;
-  /* ... */
+  color: #cbd5e1;
+  margin-top: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
 }
 
 /* ... */
@@ -200,7 +205,7 @@
 }
 
 #search-input::placeholder {
-  color: #cad5e1;
+  color: #94a3b8;
 }
 
 #search-input:focus {
@@ -362,7 +367,7 @@
 
 .detail-label {
   font-size: 13px;
-  color: #64748b;
+  color: #94a3b8;
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -372,7 +377,7 @@
 .detail-value {
   font-size: 28px;
   font-weight: 700;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 /* ===== Forecast Sections ===== */
