@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div class="app">
@@ -31,14 +29,6 @@
                 <div class="particle"></div>
                 <div class="particle"></div>
                 <div class="particle"></div>
-            </div>
-
-            <!-- Animated Clouds -->
-            <div class="clouds">
-                <div class="cloud cloud-1"></div>
-                <div class="cloud cloud-2"></div>
-                <div class="cloud cloud-3"></div>
-                <div class="cloud cloud-4"></div>
             </div>
         </div>
 
@@ -136,7 +126,11 @@
 
             <!-- Footer -->
             <footer class="footer">
-                <p>Powered By Horizon NMC Students</p>
+                <p>Powered by Weather API</p>
+                <div id="demo-indicator" class="demo-indicator" style="display: none;">
+                    <span class="demo-badge">DEMO MODE</span>
+                    <span class="demo-text">Using sample data - Add API key for real weather</span>
+                </div>
             </footer>
 
         </div>
@@ -145,5 +139,4 @@
     <!-- JS -->
     <script src="script.js"></script>
 </body>
-
 </html>
