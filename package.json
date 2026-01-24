@@ -1,0 +1,12 @@
+{
+  "name": "weather_dash",
+  "version": "1.0.0",
+  "description": "A simple weather dashboard project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Lakshitha Chanaka",
+  "license": "ISC",
+  "dependencies": {}
+}

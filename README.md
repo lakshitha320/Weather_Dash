@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Weather Dashboard
 
 A modern, responsive weather dashboard with stunning animations and transitions using the OpenWeatherMap API.
@@ -127,3 +128,6 @@ Update the CSS custom properties or color values to match your preferred theme.
 ## 📄 License
 
 This project is open source and available under the MIT License.
+=======
+
+>>>>>>> 105f0b87663334710cec03a94f678c2eb3c162bf
