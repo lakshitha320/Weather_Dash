@@ -5,8 +5,7 @@
 
 // ===== Configuration =====
 const CONFIG = {
-  GEO_URL: 'https://geocoding-api.open-meteo.com/v1/search',
-  WEATHER_URL: 'https://api.open-meteo.com/v1/forecast',
+  API_BASE: '/api/weather',
   GRADIENTS: {
     clear: 'linear-gradient(135deg, #00C9FF, #92FE9D)',
     cloud: 'linear-gradient(135deg, #304352, #d7d2cc)',
