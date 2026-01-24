@@ -313,17 +313,19 @@ function updateBackground(condition) {
   let gradient = 'linear-gradient(135deg, #1e293b, #020617)'; // Default
 
   if (conditionLower.includes('clear') || conditionLower.includes('sunny')) {
-    gradient = 'linear-gradient(135deg, #ff6b35, #f7931e, #ffb627)';
+    gradient = 'linear-gradient(135deg, #00C9FF, #92FE9D)'; // Bright Blue to Green
   } else if (conditionLower.includes('cloud')) {
-    gradient = 'linear-gradient(135deg, #4a5568, #718096, #a0aec0)';
+    gradient = 'linear-gradient(135deg, #8e9eab, #eef2f3)'; /* Grayish - metallic */
+    // Let's try a cooler cloudy blue actually, lighter
+    gradient = 'linear-gradient(135deg, #304352, #d7d2cc)'; // Darker stormy clouds
   } else if (conditionLower.includes('rain') || conditionLower.includes('drizzle')) {
-    gradient = 'linear-gradient(135deg, #2d3748, #4a5568, #1a202c)';
+    gradient = 'linear-gradient(135deg, #4b6cb7, #182848)'; // Deep Blue Rain
   } else if (conditionLower.includes('snow')) {
-    gradient = 'linear-gradient(135deg, #e2e8f0, #cbd5e0, #a0aec0)';
+    gradient = 'linear-gradient(135deg, #83a4d4, #b6fbff)'; // Icy Blue
   } else if (conditionLower.includes('thunder') || conditionLower.includes('storm')) {
-    gradient = 'linear-gradient(135deg, #2d1b69, #11998e, #38a169)';
+    gradient = 'linear-gradient(135deg, #141E30, #243B55)'; // Dark Night Storm
   } else if (conditionLower.includes('mist') || conditionLower.includes('fog')) {
-    gradient = 'linear-gradient(135deg, #4a5568, #2d3748, #1a202c)';
+    gradient = 'linear-gradient(135deg, #3E5151, #DECBA4)'; // Sandy Mist
   }
 
   backgroundContainer.style.background = gradient;
