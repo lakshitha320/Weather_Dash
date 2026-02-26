@@ -18,7 +18,7 @@
               *DevOps Practices
               *Containerization & CI/CD Concepts
 
-  ## 🧩 Key Features
+  ## Key Features
 - Real-time Weather API Integration
 - Secure Backend API Handling
 - Responsive UI Design
@@ -26,7 +26,7 @@
 - Docker-based Deployment
 - CI/CD Ready Architecture
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Frontend(ITBNM-2313-0082)
 - React.js
@@ -43,12 +43,12 @@
 - GitHub Version Control
 - CI/CD Workflow Configuration
 
-✨ Application Features
-🌍 Weather Search
+# Application Features
+# Weather Search
       -Search by city name
       -Global city support
 
-📊 Real-Time Data Display
+# Real-Time Data Display
       -Temperature
       -Humidity
       -Wind Speed
@@ -90,8 +90,13 @@
        -Unit testing integration (Jest)
        -Cloud-based CI/CD pipeline automation
 
-📜 License
+# License
        -This project was developed for academic and learning purposes.
 
-🙌 Acknowledgment
+# Acknowledgment
        -This project demonstrates collaborative teamwork, full-stack engineering skills, and DevOps integration in a practical software development lifecycle.
+
+## Project Demo and Deployment
+
+- **Demo Link**: 
+- **GitHub Repository**: [GitHub Repo Link]
