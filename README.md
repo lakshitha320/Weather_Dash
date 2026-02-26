@@ -62,7 +62,7 @@
 
 
 ## Project Structure
-     Weather_Dash/
+Weather_Dash/
 │
 ├── backend/
 │   ├── routes/
@@ -98,5 +98,5 @@
 
 ## Project Demo and Deployment
 
-- **Demo Link**: weather-dash-theta.vercel.app
+- **Demo Link**: https://weather-dash-theta.vercel.app/
 
