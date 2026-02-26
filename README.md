@@ -1,4 +1,4 @@
-🌦️ Weather Dash – Full Stack Weather Monitoring System
+## Weather Dash – Full Stack Weather Monitoring System
     A scalable, containerized full-stack weather dashboard application built with modern development and DevOps practices.
 
   ## Group Information
@@ -28,17 +28,17 @@
 
 ## Technologies Used
 
-### Frontend(ITBNM-2313-0082)
+## Frontend(ITBNM-2313-0082)
 - React.js
 - Tailwind CSS / CSS3
 - Axios
 
-### Backend(ITBNM-2313-0069)
+## Backend(ITBNM-2313-0069)
 - Node.js
 - Express.js
 - OpenWeatherMap API
 
-### DevOps(ITBNM-2313-0073)
+## DevOps(ITBNM-2313-0073)
 - Docker
 - GitHub Version Control
 - CI/CD Workflow Configuration
@@ -61,7 +61,7 @@
       -Reusable React components
 
 
-📂 Project Structure
+## Project Structure
      Weather_Dash/
 │
 ├── backend/
