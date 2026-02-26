@@ -98,5 +98,5 @@
 
 ## Project Demo and Deployment
 
-- **Demo Link**: 
-- **GitHub Repository**: [GitHub Repo Link]
+- **Demo Link**: weather-dash-theta.vercel.app
+
