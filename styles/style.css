@@ -472,6 +472,19 @@
 
 
 /* ===== Responsive ===== */
+@media (max-width: 850px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .weather-main {
+    justify-content: center;
+  }
+  .weather-meta {
+    justify-content: center;
+    gap: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .glass-container {
     margin: 0;
@@ -501,6 +514,7 @@
   }
 
   .details-grid {
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
   }
 
@@ -518,6 +532,127 @@
 
   .welcome-box h1 {
     font-size: 42px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 12px 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .unit-toggle {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .main-area {
+    padding: 15px 10px;
+  }
+
+  .welcome-box h1 {
+    font-size: 32px;
+  }
+
+  .welcome-box p {
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+
+  #search-input {
+    font-size: 16px;
+    padding: 16px 20px;
+    padding-right: 55px;
+  }
+
+  .search-button {
+    width: 40px;
+    height: 40px;
+    right: 8px;
+  }
+
+  .city-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  .quick-cities {
+    gap: 8px;
+  }
+
+  .location-badge {
+    font-size: 24px;
+    justify-content: center;
+  }
+
+  .weather-card.current-card {
+    padding: 24px 15px;
+    border-radius: 24px;
+  }
+
+  .weather-main {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  #temperature {
+    font-size: 52px;
+  }
+
+  .big-icon {
+    font-size: 64px;
+  }
+
+  .weather-meta {
+    justify-content: space-between;
+    gap: 0;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .detail-card {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .detail-value {
+    font-size: 22px;
+  }
+
+  .detail-label {
+    font-size: 11px;
+  }
+
+  .forecast-section h3 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .forecast-card {
+    min-width: 120px;
+    padding: 16px;
+    border-radius: 20px;
+  }
+
+  .forecast-temps {
+    gap: 8px;
+  }
+
+  .max-temp {
+    font-size: 16px;
+  }
+
+  .min-temp {
+    font-size: 14px;
   }
 }
 
