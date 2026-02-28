@@ -73,12 +73,11 @@ This project demonstrates:
 ---
 
 ## Project Structure
-
-Weather_Dash/
-│
-├── backend/
-│   ├── routes/
-│   ├── controllers/
+-Weather_Dash/
+-│
+-├── backend/
+-│   ├── routes/
+-│   ├── controllers/
 │   ├── config/
 │   ├── app.js
 │   └── package.json
@@ -95,4 +94,5 @@ Weather_Dash/
 ├── .dockerignore
 ├── .gitignore
 └── README.md
+
 
