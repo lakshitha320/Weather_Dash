@@ -1,27 +1,20 @@
+# Use Node.js official lightweight image
 FROM node:18-alpine
 
-
+# Set the working directory inside the container
 WORKDIR /app
 
-
+# Copy package.json and package-lock.json if available
 COPY package*.json ./
 
+# Install dependencies
+RUN npm install
 
-RUN npm install --production
-
-
+# Copy the rest of the application code
 COPY . .
 
+# Expose the port that the application listens on
+EXPOSE 5000
 
-RUN addgroup -S appgroup && adduser -S appuser -G appgroup
-USER appuser
-
-
-EXPOSE 3000
-
-
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s \
-  CMD wget --quiet --tries=1 --spider http://localhost:3000 || exit 1
-
-
+# Command to run the application
 CMD ["npm", "start"]

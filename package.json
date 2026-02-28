@@ -4,7 +4,7 @@
   "description": "A simple weather dashboard project",
   "main": "index.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node server.js"
   },
   "author": "Lakshitha Chanaka",
   "license": "ISC",
