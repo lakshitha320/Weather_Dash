@@ -74,23 +74,21 @@ This project demonstrates:
 
 ## Project Structure
 
-## Project Structure
-
 Weather_Dash/
 │
 ├── backend/
-│ ├── routes/
-│ ├── controllers/
-│ ├── config/
-│ ├── app.js
-│ └── package.json
+│   ├── routes/
+│   ├── controllers/
+│   ├── config/
+│   ├── app.js
+│   └── package.json
 │
 ├── frontend/
-│ ├── src/
-│ ├── components/
-│ ├── pages/
-│ ├── public/
-│ └── package.json
+│   ├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── public/
+│   └── package.json
 │
 ├── Dockerfile
 ├── docker-compose.yml
