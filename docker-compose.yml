@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  weather-dash:
+    build: .
+    container_name: weather-dash-app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - API_KEY=${API_KEY}
+    restart: unless-stopped
