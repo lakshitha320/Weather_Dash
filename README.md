@@ -1,5 +1,5 @@
 ## Weather Dash – Full Stack Weather Monitoring System
-A scalable, containerized full-stack weather dashboard application built with modern development and DevOps practices.
+- A scalable, containerized full-stack weather dashboard application built with modern development and DevOps practices.
 
 ## Group Information
 - **K.M.L.Chanaka Sadaruwan** - ITBNM-2313-0073 - Role: Docker setup, CI/CD configuration, deployment, system integration  
@@ -10,7 +10,7 @@ A scalable, containerized full-stack weather dashboard application built with mo
 
 ##  Project Overview
 
-*Weather Dash* is a modern full-stack web application that provides **real-time weather data** through a clean and responsive dashboard interface.  
+- *Weather Dash* is a modern full-stack web application that provides **real-time weather data** through a clean and responsive dashboard interface.  
 The system integrates with an external weather API and presents structured data to users through an interactive frontend interface.  
 
 This project demonstrates:  
@@ -123,12 +123,12 @@ Weather_Dash/
 
 **Project Demo and Deployment**
 
-Demo Link: https://weather-dash-theta.vercel.app/
+- Demo Link: https://weather-dash-theta.vercel.app/
 
 **Docker Paths**
 
-Dockerfile → Weather_Dash/Dockerfile
+- Dockerfile → Weather_Dash/Dockerfile
 
-docker-compose.yml → Weather_Dash/docker-compose.yml
+- docker-compose.yml → Weather_Dash/docker-compose.yml
 
-.dockerignore → Weather_Dash/.dockerignore
+- .dockerignore → Weather_Dash/.dockerignore
