@@ -8,7 +8,7 @@ A scalable, containerized full-stack weather dashboard application built with mo
 
 ---
 
-## 📖 Project Overview
+##  Project Overview
 
 *Weather Dash* is a modern full-stack web application that provides **real-time weather data** through a clean and responsive dashboard interface.  
 The system integrates with an external weather API and presents structured data to users through an interactive frontend interface.  
@@ -65,7 +65,7 @@ This project demonstrates:
 - Weather Condition  
 - Pressure  
 
-### 🎨 Responsive Dashboard
+###  Responsive Dashboard
 - Mobile-friendly design  
 - Clean and modern UI  
 - Reusable React components  
@@ -73,11 +73,11 @@ This project demonstrates:
 ---
 
 ## Project Structure
--Weather_Dash/
--│
--├── backend/
--│   ├── routes/
--│   ├── controllers/
+Weather_Dash/
+│
+├── backend/
+│   ├── routes/
+│   ├── controllers/
 │   ├── config/
 │   ├── app.js
 │   └── package.json
@@ -96,3 +96,39 @@ This project demonstrates:
 └── README.md
 
 
+---
+
+**Docker Paths**
+
+- Dockerfile: Weather_Dash/Dockerfile
+- docker-compose.yml: Weather_Dash/docker-compose.yml
+- .dockerignore: Weather_Dash/.dockerignore
+
+**Future Improvements**
+
+- User authentication system
+- Weather history tracking
+- Database integration (MongoDB)
+- Advanced analytics dashboard
+- Unit testing integration (Jest)
+- Cloud-based CI/CD pipeline automation
+
+**License**
+
+- This project was developed for academic and learning purposes.
+
+**Acknowledgment**
+
+- This project demonstrates collaborative teamwork, full-stack engineering skills, and DevOps integration in a practical software development lifecycle.
+
+**Project Demo and Deployment**
+
+Demo Link: https://weather-dash-theta.vercel.app/
+
+**Docker Paths**
+
+Dockerfile → Weather_Dash/Dockerfile
+
+docker-compose.yml → Weather_Dash/docker-compose.yml
+
+.dockerignore → Weather_Dash/.dockerignore
